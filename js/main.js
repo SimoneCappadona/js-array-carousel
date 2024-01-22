@@ -48,3 +48,21 @@ prevImgEl.addEventListener("click", function () {
 
   nextCarouselimg.classList.add("active");
 });
+
+
+// * Set interval per le immagini
+setInterval(function () {
+  const allCarouselImg = document.getElementsByClassName("carousel-img");
+  const currentImg = allCarouselImg[carouselIndex];
+  currentImg.classList.remove("active");
+
+  if (carouselIndex >= carouselImg.length - 1) {
+    carouselIndex = 0;
+  } else {
+    carouselIndex++;
+  }
+
+  const nextCarouselimg = allCarouselImg[carouselIndex];
+
+  nextCarouselimg.classList.add("active");
+}, 3000);
